@@ -247,21 +247,21 @@
             scene.add(cube);
 
             //z plane
-            const sliceZ = volume.extractSlice(
+            sliceZ = volume.extractSlice(
               "z",
               Math.floor(volume.RASDimensions[2] / 4)
             );
             scene.add(sliceZ.mesh);
 
             //y plane
-            const sliceY = volume.extractSlice(
+            sliceY = volume.extractSlice(
               "y",
               Math.floor(volume.RASDimensions[1] / 2)
             );
             scene.add(sliceY.mesh);
 
             //x plane
-            const sliceX = volume.extractSlice(
+            sliceX = volume.extractSlice(
               "x",
               Math.floor(volume.RASDimensions[0] / 2)
             );
@@ -287,7 +287,7 @@
               });
           };
           reader.readAsArrayBuffer(input);
-        };
+        }
         
         if (modelCount == 0){
           gui = new GUI();
